@@ -12,6 +12,6 @@ This repository contains a really simple example:
 
 This approach has many benefits:
 
-1. I can update the model without redeploying the plumber API. In fact, I can schedule the R Markdown document to regularly retrain the model automatically!
-2. The handoff between the RMD and the plumber script is seamless. The code works no matter where it runs - whether it is on my desktop, the server, or in production on Connect.
+1. I can update the model without redeploying the API. In fact, I can schedule the R Markdown document to regularly retrain the model automatically!
+2. The handoff between the R Markdown document and the API is seamless. The code for both works no matter where it runs - whether it is on my desktop, the server, or in production on Connect. No more surprises from misconfigured file paths!
 3. If I wanted the model to be available to other content, such as a shiny app, I wouldn't have to email someone the RDS file, or needlessly duplicate it!
