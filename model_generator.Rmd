@@ -1,0 +1,27 @@
+---
+title: "Update Model with New Data"
+output: html_document
+---
+
+First, update our model:
+
+```{r}
+# fit a simple model that will change with each run
+ids <- sample(1:nrow(mtcars), size = 30, replace = TRUE)
+dataset <- mtcars[ids,]
+m <- lm(mpg ~ hp + cyl + disp, data = dataset)
+print(m)
+```
+
+Next, pin the model to Connect:
+
+```{r}
+library(pins)
+# Tell the pins package about your Connect server
+board_register("rsconnect", 
+               server = "https://colorado.rstudio.com/rsc",
+               # use an API key if the RMD will run on Connect
+               key = Sys.getenv("RSC_KEY")) 
+# push the model to Connect
+pin(m, name = "mtcar-model", board = "rsconnect")
+```
