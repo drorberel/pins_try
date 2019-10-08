@@ -4,11 +4,11 @@ Every data science project I've worked on has the one or two files that just don
 
 The [pins](https://rstudio.github.io/pins) package helps you manage objects that don't fit anywhere else, giving you all the benefits of RStudio Connect.
 
-This repository contains a really sample:
+This repository contains a really simple example:
 
 1. The `model_generator.Rmd` file creates a simple linear model, and then pins the model object on RStudio Connect.
 
-2. The `plumber.R` script loads the pinned model from Connect and surfaces it as a production API. 
+2. The `plumber.R` script loads the pinned model from RStudio Connect and surfaces it as a production API. 
 
 This approach has many benefits:
 
