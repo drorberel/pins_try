@@ -2,12 +2,10 @@ library(plumber)
 library(pins)
 
 # Load the pinned model
-board_register("rsconnect", 
-               server = "https://colorado.rstudio.com/rsc"),
-               # use an API key so that the API can access the model on Connect
-               key = Sys.getenv("RSC_KEY"))
+board_register_github(repo = "drorberel/pins_try", token = '782b26a27a348c1c0b0d14ce8e6a964ab7d7742a')
 
-m <- pin_get("sean/mtcar-model", board = "rsconnect")
+
+m <- pin_get("mtcar-model", board = "github")
 
 #* @get /mpg
 #* @param hp Horsepower

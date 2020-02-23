@@ -18,10 +18,8 @@ Next, pin the model to Connect:
 ```{r}
 library(pins)
 # Tell the pins package about your Connect server
-board_register("rsconnect", 
-               server = "https://colorado.rstudio.com/rsc",
-               # use an API key if the RMD will run on Connect
-               key = Sys.getenv("RSC_KEY")) 
+board_register_github(repo = "drorberel/pins_try", token = '782b26a27a348c1c0b0d14ce8e6a964ab7d7742a')
+
 # push the model to Connect
-pin(m, name = "mtcar-model", board = "rsconnect")
+pin(m, name = "mtcar-model", board = "github")
 ```
